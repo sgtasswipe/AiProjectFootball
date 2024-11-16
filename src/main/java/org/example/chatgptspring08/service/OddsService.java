@@ -1,16 +1,16 @@
 package org.example.chatgptspring08.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.example.chatgptspring08.dto.odds.OddsResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Service
 public class OddsService {
@@ -46,12 +46,11 @@ public class OddsService {
 
             if (homeTeam.contains(team.toLowerCase()) || awayTeam.contains(team.toLowerCase())) {
                 Map<String, Object> map = new HashMap<>();
-                // Gets the first match (e.g. Betfair and Matchbook returns 2 matches with absurd odds)
-                map.put("Bookmaker", response.getBookmakers().get(0));
+                // Include all bookmakers
+                map.put("Bookmakers", response.getBookmakers());
                 map.put("HomeTeam", response.getHome_team());
                 map.put("AwayTeam", response.getAway_team());
                 map.put("DateTime", response.getCommence_time());
-                map.put("Odds" , response.getBookmakers().get(0).getMarkets().get(0).getOutcomes());
                 filteredTeamList.add(map);
             }
         }

@@ -6,32 +6,30 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-<div class="main-wrapper">
-    <form id="input-form">
-        <label for="leagues">League:</label>
-        <select name="leagues" id="leagues">
-            <option value="soccer_epl">Premier League</option>
-            <option value="soccer_uefa_nations_league">Nations League</option>
-        </select>
-        <br>
-        <br>
-        <label for="regions">Region of bookmakers:</label>
-        <select name="regions" id="regions">
-            <option value="eu">Europe</option>
-            <option value="uk">United Kingdom</option>
-            <option value="us,us2">United States</option>
-            <option value="au">Australia</option>
-        </select>
-        <br>
-        <br>
-        <!-- TO-DO: IMPLEMENT HARDCODED 'SELECT' FOR TEAMS IN EACH LEAGUE -->
-        <label for="team">Team:</label>
-        <input type="text" id="team" name="team" required>
-        <br>
-        <br>
-        <button type="submit">Search</button>
-    </form>
-</div>
+    <div class="main-wrapper">
+        <form id="input-form">
+            <label for="leagues">League:</label>
+            <select name="leagues" id="leagues">
+                <option value="soccer_epl">Premier League</option>
+                <option value="soccer_uefa_nations_league">Nations League</option>
+            </select>
+            <br><br>
+            <label for="regions">Region of bookmakers:</label>
+            <select name="regions" id="regions">
+                <option value="eu">Europe</option>
+                <option value="uk">United Kingdom</option>
+                <option value="us,us2">United States</option>
+                <option value="au">Australia</option>
+            </select>
+            <br><br>
+            <label for="team">Team:</label>
+            <input type="text" id="team" name="team" required>
+            <br><br>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <!-- Container for Match Cards -->
+    <div id="match-container"></div>
+    <script type="module" src="../js/odds.js"></script>
 </body>
-<script type="module" src="../js/odds.js"></script>
 </html>

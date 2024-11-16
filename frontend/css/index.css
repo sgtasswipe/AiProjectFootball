@@ -7,12 +7,14 @@ body {
     background-position-x: -21.2vw;
 }
 
-/* Wrapper styling */
+/* Main Wrapper Flex Container */
 .main-wrapper {
     display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px; /* Space between form and match-container */
+    padding: 20px;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 /* Form container */
@@ -22,6 +24,12 @@ form {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 300px;
+}
+
+/* Form Styling */
+#input-form {
+    flex: 0 0 300px; /* Fixed width for the form */
+    max-width: 300px;
 }
 
 /* Form elements styling */
@@ -67,6 +75,14 @@ button:hover {
     }
 }
 
+/* Match Container Styling */
+#match-container {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 /* Match card container */
 .match-card {
     background: #fff;
@@ -76,6 +92,34 @@ button:hover {
     padding: 20px;
     width: 90%;
     max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    width: 100%;
+}
+
+.match-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.match-card li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.match-card li strong {
+    color: #333;
+}
+
+.match-card li:nth-child(1),
+.match-card li:nth-child(2),
+.match-card li:nth-child(3) {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
 }
 
 /* Match info */
@@ -132,5 +176,13 @@ button:hover {
     .odds-predictions li {
         font-size: 13px;
         padding: 8px;
+    }
+    
+    .main-wrapper {
+        flex-direction: column;
+    }
+    
+    #input-form, #match-container {
+        max-width: 100%;
     }
 }

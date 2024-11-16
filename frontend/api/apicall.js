@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8080';
+/*const BASE_URL = 'http://localhost:8080';
 
 async function apiCallWithFullUrl(urlPath, method = 'GET', options = {}) {
     const { baseUrl = BASE_URL, headers = {}, ...otherOptions } = options;
